@@ -1,5 +1,5 @@
 require "bindings"
 require "plugins"
+require "plugins.nvim-tree"
 require "settings"
 require "lsp"
-

@@ -18,7 +18,6 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'junegunn/vim-easy-align'
 Plug('https://github.com/junegunn/vim-github-dashboard.git')
 Plug 'honza/vim-snippets'
-Plug('scrooloose/nerdtree', { on = 'NERDTreeToggle' })
 Plug('junegunn/fzf', { dir = '~/.fzf', ['do'] = './install --all' })
 
 Plug 'williamboman/mason.nvim'
@@ -31,5 +30,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 vim.call('plug#end')
+
