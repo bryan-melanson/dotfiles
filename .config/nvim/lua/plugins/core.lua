@@ -165,10 +165,10 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "autopep8",
         "stylua",
         "shellcheck",
         "shfmt",
-        "flake8",
         "isort",
         "black",
         "ruff",
@@ -206,7 +206,7 @@ return {
           if cmp.visible() then
             cmp.select_next_item()
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- this way you will only jump inside the snippet region
+            -- this way you will only jump inside the snippet region/symbo
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
@@ -244,7 +244,19 @@ return {
         markdown = { "prettier" },
         graphql = { "prettier" },
         lua = { "stylua" },
-        python = { "autopep8", "isort", "black" },
+        python = { { "autopep8", "isort", "black" } },
+      },
+    },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
       },
     },
   },
