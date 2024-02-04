@@ -9,6 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id sh ~/.config/polybar/polybar.sh
+exec --no-startup-id xrandr -s 1920x1080
+exec xrandr --output DP-1 --auto --right-of HDMI-0
+exec_always --no-startup-id feh --randomize --bg-scale ~/wallpaper/*
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -52,7 +57,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id termite
+bindsym $mod+Return exec --no-startup-id kitty
 
 bindsym $mod+Shift+Return exec --no-startup-id firefox
 
@@ -174,10 +179,6 @@ mode "resize" {
 exec_always --no-startup-id picom -f
 
 set $first_run 1
-
-exec --no-startup-id polybar
-exec --no-startup-id xrandr -s 1920x1080
-exec_always --no-startup-id feh --randomize --bg-scale ~/wallpaper/*
 
 exec_always --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
