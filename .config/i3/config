@@ -9,9 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec --no-startup-id sh ~/.config/polybar/polybar.sh
 exec --no-startup-id xrandr -s 1920x1080
-exec xrandr --output DP-1 --auto --right-of HDMI-0
+exec_always --no-startup-id xrandr --output DP-1 --auto --right-of HDMI-0
+exec --no-startup-id sh ~/.config/polybar/polybar.sh
 exec_always --no-startup-id feh --randomize --bg-scale ~/wallpaper/*
 
 set $ws1 "1"
@@ -149,7 +149,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "id3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
